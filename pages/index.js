@@ -7,6 +7,7 @@ import theme from '../common/theme';
 import firebase from "../utils/firebase"
 
 export default function Home() {
+  firebase.analytics().logEvent('test')
   return (
     <div className={styles.container}>
       <Head>
