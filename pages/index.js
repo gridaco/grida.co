@@ -4,6 +4,7 @@ import { sections } from '../common/toolkit';
 import { Header } from '../sections';
 import { ThemeProvider } from '@material-ui/core';
 import theme from '../common/theme';
+import firebase from "../utils/firebase"
 
 export default function Home() {
   return (
