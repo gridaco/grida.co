@@ -29,8 +29,16 @@ export default function useOnScreen(
           typeof rootMargin == "number" ? `${rootMargin}px` : rootMargin,
       },
     );
-    if (ref) {
-      observer.current.observe(ref.current);
+    if (ref.current) {
+      try {
+        observer.current.observe(ref.current);
+      } catch (_) {
+        console.warn(
+          "failed observing object ref. ref is not a type of element.",
+          _,
+          ref,
+        );
+      }
     }
     // Remove the observer as soon as the component is unmounted
     return () => {

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import SectionLayout from "layout/section";
 import { Box, Flex, Heading, Text } from "rebass";
 import styled from "@emotion/styled";
@@ -8,11 +8,17 @@ import DesignPlatforms from "layout/design-platforms";
 import CodePreview from "layout/code-preview";
 import BlankArea from "components/blank-area";
 import { css } from "@emotion/core";
+import { motion, useAnimation, useViewportScroll } from "framer-motion";
+import useOnScreen from "utils/hooks/use-on-screen";
+import { useInView } from "react-intersection-observer";
 
 const DesignToCode = () => {
   return (
     <SectionLayout alignContent="start" backgroundColor="rgba(0,0,0,0)">
-      <Heading fontSize={["32px", "64px", "64px", "80px"]} style={{ letterSpacing: "0em", lineHeight: "98.1%" }}>
+      <Heading
+        fontSize={["32px", "64px", "64px", "80px"]}
+        style={{ letterSpacing: "0em", lineHeight: "98.1%" }}
+      >
         Designs, <br />
         come to live
       </Heading>
@@ -21,16 +27,47 @@ const DesignToCode = () => {
         Instantly convert your design to code, prototype and product within a
         click. No coding required.
       </Description>
-      <SectionLayout className="design-to-code-absoulte-view" variant="full-width" inherit={false} notAutoAllocateHeight>
+      <SectionLayout
+        className="design-to-code-absoulte-view"
+        variant="full-width"
+        inherit={false}
+        notAutoAllocateHeight
+      >
         <Positioner>
           <DesignPlatforms />
-          <CodePreview />
+          <CodeViewScrollMotionWrapperView />
         </Positioner>
       </SectionLayout>
       <BlankArea height={100} />
     </SectionLayout>
   );
 };
+
+function CodeViewScrollMotionWrapperView() {
+  const controls = useAnimation();
+  const [ref, inView] = useInView();
+
+  useEffect(() => {
+    if (inView) {
+      controls.start("visible");
+    }
+  }, [controls, inView]);
+
+  return (
+    <motion.div
+      ref={ref}
+      animate={controls}
+      initial="hidden"
+      transition={{ duration: 2.5 }}
+      variants={{
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
+      }}
+    >
+      <CodePreview />
+    </motion.div>
+  );
+}
 
 export default DesignToCode;
 
@@ -42,7 +79,6 @@ const Description = styled(Text)`
 
   line-height: 33px;
   letter-spacing: 0em;
-
 
   ${props => media("0px", (props.theme as ThemeInterface).breakpoints[0])} {
     max-width: 100%;
