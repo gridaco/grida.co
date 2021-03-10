@@ -11,6 +11,7 @@ import { css } from "@emotion/core";
 import { motion, useAnimation, useViewportScroll } from "framer-motion";
 import useOnScreen from "utils/hooks/use-on-screen";
 import { useInView } from "react-intersection-observer";
+import ShowWhenVisible from "components/motion-container/show-when-visible";
 
 const DesignToCode = () => {
   return (
@@ -46,6 +47,7 @@ const DesignToCode = () => {
 function CodeViewScrollMotionWrapperView() {
   const controls = useAnimation();
   const [ref, inView] = useInView();
+  // useViewportScroll()
 
   useEffect(() => {
     if (inView) {

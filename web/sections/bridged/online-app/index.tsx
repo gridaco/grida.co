@@ -12,6 +12,7 @@ import ApplicationPreview from "layout/application-preview";
 import { DesktopView, MobileView } from "utils/styled/styles";
 import { DesignToCode } from "..";
 import Image from "next/image";
+import ShowWhenVisible from "components/motion-container/show-when-visible";
 
 interface OnlineAppProps {
   isMobile?: boolean;
@@ -49,10 +50,11 @@ const OnlineApp: React.FC<OnlineAppProps> = ({ isMobile }) => {
             What you’ve just sketched?
           </Text>
           <OnlineTitle fontSize={["32px", "36px", "36px", "36px"]}>
-            <span style={{ letterSpacing: "0em" }}>That just got</span> <OnairButton />
+            <span style={{ letterSpacing: "0em" }}>That just got</span>{" "}
+            <OnairButton />
           </OnlineTitle>
           <MobileView style={{ marginTop: 40, position: "relative" }}>
-            <ApplicationPreview />
+            <AppPreviewMotionView />
             <div className="gradient-view no-drag">
               <Image
                 src="/assets/mobile/mobile-gradient-blur-xs.png"
@@ -81,7 +83,7 @@ const OnlineApp: React.FC<OnlineAppProps> = ({ isMobile }) => {
           />
         </Flex>
         <DesktopView style={{ position: "relative" }}>
-          <ApplicationPreview />
+          <AppPreviewMotionView />
           <div className="gradient-view no-drag">
             <Image src={assetUrl} alt="gradient" width="1040" height="1027" />
           </div>
@@ -91,6 +93,14 @@ const OnlineApp: React.FC<OnlineAppProps> = ({ isMobile }) => {
     </SectionLayout>
   );
 };
+
+function AppPreviewMotionView() {
+  return (
+    <ShowWhenVisible>
+      <ApplicationPreview />
+    </ShowWhenVisible>
+  );
+}
 
 export default OnlineApp;
 
@@ -105,7 +115,6 @@ const OnlineTitle = styled(Heading)`
 `;
 
 const Description = styled(Text)`
-
   line-height: 33px;
   letter-spacing: 0em;
   max-width: 520px;

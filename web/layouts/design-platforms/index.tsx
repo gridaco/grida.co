@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
-import { Box, Flex } from 'rebass'
-import styled from '@emotion/styled';
-import Image from 'next/image'
-import { media } from 'utils/styled/media';
-import { ThemeInterface } from 'utils/styled/theme';
-import LiveDesignDemoFrame from 'components/motion/live-design-demo';
+import React, { useState } from "react";
+import { Box, Flex } from "rebass";
+import styled from "@emotion/styled";
+import Image from "next/image";
+import { media } from "utils/styled/media";
+import { ThemeInterface } from "utils/styled/theme";
+import LiveDesignDemoFrame from "components/motion/live-design-demo";
+import ShowWhenVisible from "components/motion-container/show-when-visible";
 
 const renderPlatforms = ["figma", "sketch", "adobexd"];
 
@@ -14,14 +15,16 @@ const DesignPlatforms = () => {
   return (
     <AbosulteView width="50%">
       <PlatformView>
-        <div className="platform-image">
-          <Image
-            alt="platform"
-            src={`/assets/design-platforms/${currentPlatform}.png`}
-            width="auto"
-            height="auto"
-          />
-        </div>
+        <ShowWhenVisible>
+          <div className="platform-image">
+            <Image
+              alt="platform"
+              src={`/assets/design-platforms/${currentPlatform}.png`}
+              width="auto"
+              height="auto"
+            />
+          </div>
+        </ShowWhenVisible>
         <div className="platforms">
           {renderPlatforms.map(i => (
             <Image
@@ -29,20 +32,21 @@ const DesignPlatforms = () => {
               key={i}
               className="cursor"
               onClick={() => setCurrentPlatform(i)}
-              src={`/assets/platform-icons/${i}/${currentPlatform === i ? "default" : "grey"
-                }.png`}
+              src={`/assets/platform-icons/${i}/${
+                currentPlatform === i ? "default" : "grey"
+              }.png`}
               width="24"
               height="24"
             />
           ))}
         </div>
-         <LiveDesignDemoFrame />
+        <LiveDesignDemoFrame />
       </PlatformView>
     </AbosulteView>
-  )
-}
+  );
+};
 
-export default DesignPlatforms
+export default DesignPlatforms;
 
 const AbosulteView = styled(Flex)`
   position: absolute;
@@ -68,13 +72,13 @@ const AbosulteView = styled(Flex)`
     position: absolute;
     bottom: -100px;
   }
-  
+
   .preview {
     box-shadow: 0px 4px 128px 32px rgba(0, 0, 0, 0.08);
     position: absolute;
     width: 440px;
     height: 540px;
-    background-color:#F3F3F3;
+    background-color: #f3f3f3;
     border-radius: 12px;
     right: 12.5%;
     bottom: -7.5%;
@@ -101,7 +105,11 @@ const AbosulteView = styled(Flex)`
     }
   }
 
-  ${props => media((props.theme as ThemeInterface).breakpoints[0], (props.theme as ThemeInterface).breakpoints[1])} {
+  ${props =>
+    media(
+      (props.theme as ThemeInterface).breakpoints[0],
+      (props.theme as ThemeInterface).breakpoints[1],
+    )} {
     left: -60%;
 
     .platforms {
@@ -114,7 +122,11 @@ const AbosulteView = styled(Flex)`
     }
   }
 
-  ${props => media((props.theme as ThemeInterface).breakpoints[1], (props.theme as ThemeInterface).breakpoints[2])} {
+  ${props =>
+    media(
+      (props.theme as ThemeInterface).breakpoints[1],
+      (props.theme as ThemeInterface).breakpoints[2],
+    )} {
     left: -30%;
 
     .platforms {
@@ -127,7 +139,11 @@ const AbosulteView = styled(Flex)`
     }
   }
 
-  ${props => media((props.theme as ThemeInterface).breakpoints[2], (props.theme as ThemeInterface).breakpoints[3])} {
+  ${props =>
+    media(
+      (props.theme as ThemeInterface).breakpoints[2],
+      (props.theme as ThemeInterface).breakpoints[3],
+    )} {
     left: -15%;
 
     .platforms {
@@ -149,9 +165,7 @@ const AbosulteView = styled(Flex)`
       bottom: -7.5%;
     }
   }
-
-  
-`
+`;
 
 const Platforms = styled(Box)`
   margin-left: auto;
