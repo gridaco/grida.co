@@ -24,7 +24,7 @@ const DesignToCode = () => {
         come to live
       </Heading>
       <Description fontSize={["18px", "24px", "24px", "24px"]}>
-        Keep you design live. Not as a prototype, but as a ready product.
+        Keep your design live. Not as a prototype, but as a ready product.
         Instantly convert your design to code, prototype and product within a
         click. No coding required.
       </Description>
