@@ -1,6 +1,6 @@
 # [bridged.xyz](https://bridged.xyz/)
 
-![](./readme/images/web-landing-main-example.png)
+![](./assets/readme/web-landing-main-example.png)
 
 ## In case you are looking for roadmap or contribution
 
