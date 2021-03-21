@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import styled from "@emotion/styled";
 import { Flex } from "rebass";
-import useOnScreen from "utils/hooks/use-on-screen";
+import useOnScreen from "@web/utils/hooks/use-on-screen";
 import ReactPlayer from "react-player";
 import animationData from "public/animations/live-demo-app-design-motion/comp.json";
 import { media } from "@web/styles/styled/media";

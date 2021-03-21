@@ -7,7 +7,7 @@ import Icon from "@web/common/icon";
 import { media } from "@web/styles/styled/media";
 import defaultTheme, { ThemeInterface } from "@web/styles/styled/theme";
 import { usePopupContext } from "utils/context/PopupContext";
-import { useWindowWidth } from "utils/hooks/use-window-width";
+import { useWindowWidth } from "@web/utils/hooks/use-window-width";
 import Link from "next/link";
 import { LandingpageUrls } from "utils/landingpage/constants";
 import LandingpageText from "components/landingpage/text";

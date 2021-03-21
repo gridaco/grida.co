@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 import React from "react";
-import { DocsRoute } from "utils/docs/model";
+import { DocsRoute } from "utils/model";
 
 function DocsNavigationMobile(props: { route: DocsRoute }) {
   return <Wrapper>Menu</Wrapper>;

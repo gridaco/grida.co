@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { Flex, Heading } from "rebass";
 import Link from "next/link";
-import { DocsRoute } from "utils/docs/model";
+import { DocsRoute } from "utils/model";
 import { useRouter } from "next/router";
 
 function DocsNavigationSection(props: { route: DocsRoute; level?: number }) {
@@ -15,10 +15,7 @@ function DocsNavigationSection(props: { route: DocsRoute; level?: number }) {
       <SectionWrapper level={level} flexDirection="column">
         {routeConfig.path ? (
           <Link href={routeConfig.path ?? ""}>
-            <Heading
-              className="cursor"
-              fontSize="18px"
-            >
+            <Heading className="cursor" fontSize="18px">
               {routeConfig.title}
             </Heading>
           </Link>

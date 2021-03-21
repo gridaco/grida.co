@@ -2,11 +2,11 @@ import { MDXProvider } from "@mdx-js/react";
 import hydrate from "next-mdx-remote/hydrate";
 import { useState } from "react";
 import renderToString from "next-mdx-remote/render-to-string";
-import useAsyncEffect from "utils/hooks/use-async-effect";
-import CodeBlock from "@web/mdx/code";
+import useAsyncEffect from "@web/utils/hooks/use-async-effect";
+import CodeBlock from "@web/mdx/code-block";
 import styled from "@emotion/styled";
 import { Flex, Text } from "rebass";
-import Icon from "@web/@web/common/icon";
+import Icon from "@web/common/icon";
 
 const components = {
   pre: props => <div {...props} />,

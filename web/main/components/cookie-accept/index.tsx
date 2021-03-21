@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 import { Flex, Heading } from "rebass";
 import SectionLayout from "@web/layouts/section";
 import BlankArea from "components/blank-area";
-import { useWindowWidth } from "utils/hooks/use-window-width";
+import { useWindowWidth } from "@web/utils/hooks/use-window-width";
 import { defaultTheme } from "@web/styles/styled";
 import { LandingpageUrls } from "utils/landingpage/constants";
 import Link from "next/link";

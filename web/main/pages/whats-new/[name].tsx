@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import useAsyncEffect from "utils/hooks/use-async-effect";
+import useAsyncEffect from "@web/utils/hooks/use-async-effect";
 import axios from "axios";
 import Head from "next/head";
 import {

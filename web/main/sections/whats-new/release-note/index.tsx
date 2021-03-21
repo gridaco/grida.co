@@ -1,12 +1,11 @@
-import React, { useState } from 'react'
-import { GithubReleaseNote } from 'utils/methods/getGithubReleaseNote'
-import useAsyncEffect from 'utils/hooks/use-async-effect';
-import markdownToHtml from 'utils/docs/md-to-html';
-import styled from '@emotion/styled';
-
+import React, { useState } from "react";
+import { GithubReleaseNote } from "utils/methods/getGithubReleaseNote";
+import useAsyncEffect from "@web/utils/hooks/use-async-effect";
+import markdownToHtml from "utils/docs/md-to-html";
+import styled from "@emotion/styled";
 
 interface WhatsNewReleaseNoteProps {
-  release: GithubReleaseNote
+  release: GithubReleaseNote;
 }
 
 const WhatsNewReleaseNote = ({ release }: WhatsNewReleaseNoteProps) => {
@@ -14,25 +13,23 @@ const WhatsNewReleaseNote = ({ release }: WhatsNewReleaseNoteProps) => {
 
   useAsyncEffect(async () => {
     const content = await markdownToHtml(release.body || "");
-    setInnerContent(content)
-  })
+    setInnerContent(content);
+  });
 
   return (
     <div>
       <h3>{release.name}</h3>
       <p>
-        <HTMLRender
-          dangerouslySetInnerHTML={{ __html: innerContent }}
-        />
+        <HTMLRender dangerouslySetInnerHTML={{ __html: innerContent }} />
       </p>
     </div>
-  )
-}
+  );
+};
 
-export default WhatsNewReleaseNote
+export default WhatsNewReleaseNote;
 
 const HTMLRender = styled.div`
   img {
     width: 100%;
   }
-`
+`;

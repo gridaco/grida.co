@@ -2,7 +2,18 @@
     "name": "docs",
     "version": "0.0.1",
     "scripts": {
-        "dev": "next"
+        "dev": "next",
+        "build": "next build",
+        "clean": "rimraf .next",
+        "start": "next start",
+        "type-check": "tsc --noEmit -p .",
+        "lint": "eslint --ext .ts,.tsx .",
+        "lintfix": "eslint --fix --ext .ts,.tsx .",
+        "setup": "git submodule update --init --recursive",
+        "analyze": "BUNDLE_ANALYZE=both next build",
+        "vercel:setup": "yarn setup",
+        "vercel:install": "yarn vercel:setup & yarn install",
+        "vercel:build": "yarn build"
     },
     "dependencies": {
         "@web/styles": "0.0.1",

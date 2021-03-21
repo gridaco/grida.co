@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { Box, Flex, Text } from "rebass";
 import DocsNavigationSection from "components/docs-navigation-section";
-import { DocsManifest, DocsRoute } from "../../utils/docs/model";
+import { DocsManifest, DocsRoute } from "utils/model";
 import { media } from "@web/styles/styled/media";
 import { ThemeInterface } from "@web/styles/styled/theme";
 import Icon from "@web/common/icon";

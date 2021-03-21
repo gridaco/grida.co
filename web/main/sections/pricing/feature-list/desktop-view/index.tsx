@@ -5,7 +5,7 @@ import Icon from "@web/common/icon";
 import SectionLayout from "@web/layouts/section";
 import { usePopupContext } from "utils/context/PopupContext";
 import { defaultTheme } from "@web/styles/styled";
-import { useWindowWidth } from "utils/hooks/use-window-width";
+import { useWindowWidth } from "@web/utils/hooks/use-window-width";
 import LandingpageText from "components/landingpage/text";
 import BlankArea from "components/blank-area";
 import ResponsivePricingCell from "../pricing-cell";
