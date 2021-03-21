@@ -1,0 +1,7 @@
+{
+    "name": "@web/mdx",
+    "version": "0.0.1",
+    "dependencies": {
+        "prism-react-renderer": "^1.2.0"
+    }
+}

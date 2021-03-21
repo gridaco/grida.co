@@ -3,10 +3,10 @@ import hydrate from "next-mdx-remote/hydrate";
 import { useState } from "react";
 import renderToString from "next-mdx-remote/render-to-string";
 import useAsyncEffect from "utils/hooks/use-async-effect";
-import CodeBlock from "components/code";
+import CodeBlock from "@web/mdx/code";
 import styled from "@emotion/styled";
 import { Flex, Text } from "rebass";
-import Icon from "components/icon";
+import Icon from "@web/@web/common/icon";
 
 const components = {
   pre: props => <div {...props} />,

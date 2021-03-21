@@ -1,8 +1,8 @@
 import Meta from "../components/meta";
 import { Flex } from "rebass";
 import styled from "@emotion/styled";
-import { media } from "styles/styled/media";
-import { ThemeInterface } from "styles/styled/theme";
+import { media } from "@web/styles/styled/media";
+import { ThemeInterface } from "@web/styles/styled/theme";
 
 export default function Layout({ preview, children }) {
   return (

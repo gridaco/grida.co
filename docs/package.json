@@ -5,8 +5,11 @@
         "dev": "next"
     },
     "dependencies": {
-        "styles": "0.0.1",
-        "shared-layouts": "0.0.1",
+        "@web/styles": "0.0.1",
+        "@web/common": "0.0.1",
+        "@web/components": "0.0.1",
+        "@web/layouts": "0.0.1",
+        "@web/mdx": "0.0.1",
         "@mdx-js/loader": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
         "@next/mdx": "^10.0.9",
