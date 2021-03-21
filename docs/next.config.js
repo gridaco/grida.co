@@ -1,8 +1,14 @@
+const withTM = require("next-transpile-modules");
 const withMDX = require("@next/mdx")({
   extension: /\.mdx?$/,
 });
 
-module.exports = withMDX({
-  basePath: "/docs",
-  pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-});
+module.exports = withMDX(
+  // withTM(
+  {
+    basePath: "/docs",
+    transpileModules: ["shared-layouts", "styles"],
+    pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+  },
+  // ),
+);

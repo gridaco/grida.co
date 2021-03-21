@@ -5,6 +5,8 @@
         "dev": "next"
     },
     "dependencies": {
+        "styles": "0.0.1",
+        "shared-layouts": "0.0.1",
         "@mdx-js/loader": "^1.6.22",
         "@mdx-js/react": "^1.6.22",
         "@next/mdx": "^10.0.9",
@@ -14,6 +16,9 @@
         "react-dom": "^17.0.1"
     },
     "devDependencies": {
+        "@types/node": "^14.14.35",
+        "@types/react": "^17.0.3",
+        "next-transpile-modules": "^6.3.0",
         "typescript": "^4.2.3"
     }
 }
