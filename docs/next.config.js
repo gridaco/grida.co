@@ -12,8 +12,8 @@ module.exports = withMDX(
     async rewrites() {
       return [
         {
-          source: "/docs",
-          destination: "/",
+          source: "/:path*",
+          destination: "/docs/:path*",
         },
       ];
     },
