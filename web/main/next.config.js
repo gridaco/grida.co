@@ -73,6 +73,14 @@ module.exports = withBundleAnalyzer(
             reportFilename: "../bundles/client.html",
           },
         },
+        async rewrites() {
+          return [
+            {
+              source: "/docs/:path*",
+              destination: "docs.bridged.xyz/:path*",
+            },
+          ];
+        },
         async redirects() {
           return [
             // disabling globalization page access since it's not fully implemented. (temporary)
