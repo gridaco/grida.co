@@ -9,6 +9,14 @@ module.exports = withMDX(
     basePath: "/docs",
     transpileModules: ["shared-layouts", "styles"],
     pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
+    async rewrites() {
+      return [
+        {
+          source: "/docs",
+          destination: "/",
+        },
+      ];
+    },
   },
   // ),
 );
