@@ -77,7 +77,7 @@ module.exports = withBundleAnalyzer(
           return [
             {
               source: "/docs/:path*",
-              destination: "docs.bridged.xyz/:path*",
+              destination: "https://docs.bridged.xyz/:path*",
             },
           ];
         },
