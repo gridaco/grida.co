@@ -4,7 +4,7 @@ import styled from "@emotion/styled";
 import { media } from "@web/styles/styled/media";
 import { ThemeInterface } from "@web/styles/styled/theme";
 
-export default function Layout({ preview, children }) {
+export default function DocumentLayout({ children }) {
   return (
     <>
       <Meta />
