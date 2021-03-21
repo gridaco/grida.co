@@ -3,10 +3,10 @@ import styled from "@emotion/styled";
 import FeatureListMobileView from "./mobile-view";
 import FeatureListDesktopView from "./desktop-view";
 import { Flex } from "rebass";
-import { DesktopView } from "utils/styled/styles";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
-import SectionLayout from "layout/section";
+import { DesktopView } from "styles/styled/styles";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
+import SectionLayout from "shared-layouts/section";
 import BlankArea from "components/blank-area";
 
 const featureDataList = [

@@ -1,10 +1,10 @@
 import React from "react";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import { Flex, Heading, Text } from "rebass";
 import styled from "@emotion/styled";
 import Icon from "components/icon";
-import { ThemeInterface } from "utils/styled/theme";
-import { media } from "utils/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
+import { media } from "styles/styled/media";
 import BlankArea from "components/blank-area";
 import Image from "next/image";
 import LandingpageText from "components/landingpage/text";

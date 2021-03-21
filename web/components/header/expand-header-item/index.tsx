@@ -3,8 +3,8 @@ import React, { useCallback, useState } from "react";
 import { Text, Flex, Box } from "rebass";
 import styled from "@emotion/styled";
 import Product from "components/header/product";
-import { ThemeInterface } from "utils/styled/theme";
-import { media } from "utils/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
+import { media } from "styles/styled/media";
 
 const ExpandHeaderItem = ({
   item,

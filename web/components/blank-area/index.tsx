@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 
 interface BlankAreaProps {
   height: number[];

@@ -1,5 +1,5 @@
 import Icon from "components/icon";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import React from "react";
 import { Button, Flex, Heading } from "rebass";
 import styled from "@emotion/styled";

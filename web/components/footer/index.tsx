@@ -7,38 +7,38 @@ import SitemapList from "components/sitemap-list";
 import { IconList } from "components/icon/icons";
 import Link from "next/link";
 import { URLS } from "utils/landingpage/constants";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 
 const iconList: Array<{
   icon: keyof IconList;
   href: string;
 }> = [
-    {
-      icon: "youtube",
-      href: URLS.social.youtube,
-    },
-    {
-      icon: "instagram",
-      href: URLS.social.instagram,
-    },
-    {
-      icon: "twitter",
-      href: URLS.social.twitter,
-    },
-    {
-      icon: "facebook",
-      href: URLS.social.facebook,
-    },
-    {
-      icon: "dribble",
-      href: URLS.social.dribbble,
-    },
-    {
-      icon: "github",
-      href: URLS.social.github,
-    },
-  ];
+  {
+    icon: "youtube",
+    href: URLS.social.youtube,
+  },
+  {
+    icon: "instagram",
+    href: URLS.social.instagram,
+  },
+  {
+    icon: "twitter",
+    href: URLS.social.twitter,
+  },
+  {
+    icon: "facebook",
+    href: URLS.social.facebook,
+  },
+  {
+    icon: "dribble",
+    href: URLS.social.dribbble,
+  },
+  {
+    icon: "github",
+    href: URLS.social.github,
+  },
+];
 
 const Footer = () => {
   return (
@@ -91,7 +91,6 @@ const FooterContent = styled(Flex)`
   ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
     flex-direction: column;
   }
-
 `;
 
 const FooterBottom = styled(Flex)`
@@ -100,7 +99,7 @@ const FooterBottom = styled(Flex)`
   letter-spacing: 0em;
   font-weight: 400;
   ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
-   flex-direction: column;
+    flex-direction: column;
 
     .policys {
       margin-top: 20px;
@@ -108,8 +107,8 @@ const FooterBottom = styled(Flex)`
       grid-template-rows: repeat(3, 20px);
       grid-template-columns: repeat(2, 80px);
       grid-template-areas:
-      "span span ."
-      "span . .";
+        "span span ."
+        "span . .";
 
       span {
         margin-top: 10px;

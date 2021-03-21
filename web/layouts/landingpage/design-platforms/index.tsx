@@ -2,10 +2,10 @@ import React, { useState, useRef, useEffect } from "react";
 import { Box, Flex } from "rebass";
 import styled from "@emotion/styled";
 import Image from "next/image";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 import LiveDesignDemoFrame from "components/landingpage/motion/live-design-demo";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import DesignPlatformsMobile from "./mobile";
 
 const renderPlatforms = ["figma", "sketch", "adobexd"];

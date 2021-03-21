@@ -7,8 +7,8 @@ import React, { useCallback } from "react";
 import { Button, Flex, Text } from "rebass";
 import { usePopupContext } from "utils/context/PopupContext";
 import { LandingpageUrls } from "utils/landingpage/constants";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 import PricingCTAButton from "components/pricing-cta-button";
 
 function PricingCard(props: {

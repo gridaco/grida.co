@@ -1,5 +1,6 @@
 {
-    "name": "bridged-docs-web",
+    "name": "docs",
+    "version": "0.0.1",
     "scripts": {
         "dev": "next"
     },

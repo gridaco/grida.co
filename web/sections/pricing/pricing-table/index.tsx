@@ -1,11 +1,11 @@
 import React, { useCallback } from "react";
 import styled from "@emotion/styled";
 import { Flex, Heading, Text, Button } from "rebass";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import BlankArea from "components/blank-area";
 import Icon from "components/icon";
-import { media } from "utils/styled/media";
-import defaultTheme, { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import defaultTheme, { ThemeInterface } from "styles/styled/theme";
 import { usePopupContext } from "utils/context/PopupContext";
 import { useWindowWidth } from "utils/hooks/use-window-width";
 import Link from "next/link";
@@ -35,7 +35,6 @@ const TeamPlanList = [
 ];
 
 export default function PlanList() {
-
   return (
     <SectionLayout alignContent="center">
       <Title mb="43px">Pay as you grow</Title>

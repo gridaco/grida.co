@@ -9,9 +9,9 @@ import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Flex, Box } from "rebass";
 import styled from "@emotion/styled";
 import Image from "next/image";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
-import SectionLayout from "layout/section";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
+import SectionLayout from "shared-layouts/section";
 import CodePreviewMobile from "./mobile";
 
 interface DevFrameworkDemoConfig {

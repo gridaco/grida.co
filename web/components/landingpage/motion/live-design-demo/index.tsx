@@ -4,8 +4,8 @@ import { Flex } from "rebass";
 import useOnScreen from "utils/hooks/use-on-screen";
 import ReactPlayer from "react-player";
 import animationData from "public/animations/live-demo-app-design-motion/comp.json";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 
 export default function LiveDesignDemoFrame() {
   const [isStopped, setIsStopped] = useState(true);

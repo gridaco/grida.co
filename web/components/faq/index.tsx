@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Flex, Heading } from "rebass";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import Question from "./question-item";
 import BlankArea from "components/blank-area";
 import { FaqDisplayData } from "./interface";

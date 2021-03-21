@@ -2,13 +2,13 @@ import Icon from "components/icon";
 import Link from "next/link";
 import React, { useState, useEffect, useCallback } from "react";
 import styled from "@emotion/styled";
-import { center } from "utils/styled/styles";
+import { center } from "styles/styled/styles";
 import { Box, Flex, Text, Button } from "rebass";
 import ExpandHeaderItem from "./expand-header-item";
 import { HeaderMap } from "./headermap";
 import { URLS } from "utils/landingpage/constants";
-import { ThemeInterface } from "utils/styled/theme";
-import { media } from "utils/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
+import { media } from "styles/styled/media";
 import { useCookies } from "react-cookie";
 import { useRouter } from "next/router";
 

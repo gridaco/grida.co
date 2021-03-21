@@ -17,6 +17,8 @@
         "vercel:build": "yarn build"
     },
     "dependencies": {
+        "styles": "0.0.1",
+        "mdx-components": "0.0.1",
         "@emotion/babel-preset-css-prop": "^10",
         "@emotion/core": "^10.0.16",
         "@emotion/styled": "^10.0.15",

@@ -1,9 +1,9 @@
 import React from "react";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import { Box, Flex, Heading, Text } from "rebass";
 import styled from "@emotion/styled";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 import DesignPlatforms from "layout/landingpage/design-platforms";
 import CodePreview from "layout/landingpage/code-preview";
 import BlankArea from "components/blank-area";

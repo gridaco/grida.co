@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
 import { Flex, Heading, Text } from "rebass";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import StartNow from "components/start-now";
 import BlankArea from "components/blank-area";
 
@@ -16,7 +16,7 @@ const FreePlan = () => {
       </Desc>
 
       <StartNow />
-      <BlankArea height={[195 ,331]} />
+      <BlankArea height={[195, 331]} />
     </SectionLayout>
   );
 };

@@ -1,10 +1,10 @@
 import React from "react";
-import SectionLayout from "layout/section";
+import SectionLayout from "shared-layouts/section";
 import styled from "@emotion/styled";
 import BlankArea from "components/blank-area";
 import { ElevatedVideoPlayer } from "components/landingpage/effect";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 import LandingMainCtaButton from "components/landingpage/main-cta-button";
 import LandingpageText from "components/landingpage/text";
 

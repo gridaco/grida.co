@@ -1,14 +1,12 @@
 import React, { useEffect, useState } from "react";
 import styled from "@emotion/styled";
 import { Box, Flex, Text } from "rebass";
-import DocsSearchBar from "components/docs-search-bar";
 import DocsNavigationSection from "components/docs-navigation-section";
 import { DocsManifest, DocsRoute } from "../../utils/docs/model";
-import { media } from "utils/styled/media";
-import { ThemeInterface } from "utils/styled/theme";
-import DocsNavigationMobile from "components/docs-navigation-mobile";
+import { media } from "styles/styled/media";
+import { ThemeInterface } from "styles/styled/theme";
 import Icon from "components/icon";
-import { center } from "utils/styled/styles";
+import { center } from "styles/styled/styles";
 import { useRouter } from "next/router";
 const manifestJson = import("../../../docs/manifest.json");
 
@@ -29,9 +27,9 @@ function DocsNavigation() {
     setCurrentRouter(router.asPath);
 
     if (currentRouter != router.asPath && currentRouter != "") {
-      router.reload()
+      router.reload();
     }
-  }, [router])
+  }, [router]);
 
   const docs = manifest ? manifest[0] : undefined;
   return (

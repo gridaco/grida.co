@@ -1,15 +1,11 @@
-import React from 'react'
-import styled from '@emotion/styled';
-import { ThemeInterface } from 'utils/styled/theme';
-import { media } from 'utils/styled/media';
+import React from "react";
+import styled from "@emotion/styled";
+import { ThemeInterface } from "styles/styled/theme";
+import { media } from "styles/styled/media";
 
 const OnairButton = () => {
-  return (
-    <Button style={{ letterSpacing: "0em" }}>
-      ON AIR
-    </Button>
-  )
-}
+  return <Button style={{ letterSpacing: "0em" }}>ON AIR</Button>;
+};
 
 const Button = styled.button`
   margin-right: auto;
@@ -49,4 +45,4 @@ const Button = styled.button`
   }
 `;
 
-export default OnairButton
+export default OnairButton;

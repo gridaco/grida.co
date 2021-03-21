@@ -7,7 +7,7 @@ import { CookiesProvider } from "react-cookie";
 
 import Footer from "components/footer";
 import Header from "components/header";
-import { defaultTheme } from "utils/styled";
+import { defaultTheme } from "styles/styled";
 import { useRouter } from "next/router";
 import {
   PopupConsumer,
@@ -16,10 +16,10 @@ import {
 } from "utils/context/PopupContext";
 import Popup from "components/popup";
 import { analytics } from "utils/firebase";
-import { BodyCustomStyleInAbosulteSectionLayout } from "utils/styled/styles";
-import "../utils/styled/fonts.css";
+import { BodyCustomStyleInAbosulteSectionLayout } from "styles/styled/styles";
+import "../utils/styles/fonts.css";
 import { MDXProvider } from "@mdx-js/react";
-import { _MDX_COMPONENTS } from "components/mdx";
+import { _MDX_COMPONENTS } from "utils/mdx";
 import { SEO_DEFAULTS } from "utils/seo";
 import makeKeywords from "utils/seo/make-keywords";
 import { Box } from "rebass";
