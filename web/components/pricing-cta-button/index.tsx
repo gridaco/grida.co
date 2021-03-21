@@ -1,4 +1,4 @@
-import Button from "components/mdx/button";
+import { Button } from "rebass";
 import React from "react";
 import { LandingpageUrls } from "utils/landingpage/constants";
 
