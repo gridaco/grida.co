@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { GithubReleaseNote } from "utils/methods/getGithubReleaseNote";
 import useAsyncEffect from "@web/utils/hooks/use-async-effect";
-import markdownToHtml from "utils/docs/md-to-html";
+import markdownToHtml from "@web/mdx/utils/md-to-html";
 import styled from "@emotion/styled";
 
 interface WhatsNewReleaseNoteProps {

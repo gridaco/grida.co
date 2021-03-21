@@ -2,6 +2,8 @@
     "name": "@web/mdx",
     "version": "0.0.1",
     "dependencies": {
-        "prism-react-renderer": "^1.2.0"
+        "prism-react-renderer": "^1.2.0",
+        "remark": "^13.0.0",
+        "remark-html": "^13.0.1"
     }
 }
