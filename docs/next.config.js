@@ -6,12 +6,5 @@ const withMDX = require("@next/mdx")({
 module.exports = withMDX({
   transpileModules: ["shared-layouts", "styles"],
   pageExtensions: ["js", "jsx", "mdx", "ts", "tsx"],
-  async rewrites() {
-    return [
-      {
-        source: "/:path*",
-        destination: "/docs/:path*",
-      },
-    ];
-  },
+  async rewrites() {},
 });
