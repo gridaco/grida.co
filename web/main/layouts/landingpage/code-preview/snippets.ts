@@ -82,19 +82,39 @@ Container(
 `;
 
 export const REACT_JSCSS_COMPONENT_FULL_SOURCE = `
-// <Component description={"Morning Slowbeats - LoFi"}/>
+// <Component imageUrl={"image url"} description={"Morning Slowbeats - LoFi"}/>
+
 export function Component(props: {
     description: string
+    imageUrl: string
 }){
     return <>
         <Wrapper>
+            <Image src={props.imageUrl} />
             <Typography>{props.description}</Typography>
         </Wrapper>
     </>;
 }
 
 const Wrapper = styled.div\`
-    width: 60;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 24px 12px;
+\`
+
+const Image = styled.img\`
+    flex: 2;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+\`
+
+const Typography = styled.span\`
+    color: #eeeeee;
+    font-size: 18px;
+    word-break: break-all;
 \`
 
 `;
@@ -103,12 +123,30 @@ export const HTML_COMPONENT_FULL_SOURCE = `
 <head>
   <stylesheet>
     .wrapper {
-      width: 60px;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      padding: 24px 12px;
+    }
+
+    .wrapper > img {
+      flex: 2;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+
+    .wrapper > h6 {
+      color: #eeeeee;
+      font-size: 18px;
+      word-break: break-all;
     }
   </stylesheet>
 
 </head>
 <div class="wrapper">
+    <img src="asset image url" />
     <h6>Morning Slowbeats - LoFi</h6>
 </div>
 `;
