@@ -41,6 +41,7 @@ export default function LandingMainCtaButton() {
         break;
     }
   };
+
   return (
     <Box
       mt={["24px", "24px", "40px", "40px"]}
@@ -59,13 +60,13 @@ const Motion = styled(motion.div)`
   flex-direction: row;
 
   ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
-    flex-direction: column;
+    flex-direction: column-reverse;
   }
 `;
 
 const ProductHuntBtnWrapper = styled.div`
   ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
-    margin-bottom: 12px;
+    margin-top: 12px;
     margin-right: 0;
   }
   margin-right: 24px;
@@ -75,4 +76,5 @@ const MainButton = styled(Button)`
   font-size: 17.5px;
   line-height: 22px;
   letter-spacing: 0.02em;
+  margin: 0 -12px;
 `;
