@@ -7,22 +7,26 @@ import { media } from "utils/styled/media";
 import { useAuthState } from "utils/hooks/use-auth-state";
 import { URLS } from "utils/landingpage/constants";
 import { ThemeInterface } from "utils/styled/theme";
+import router from "next/router";
 
 function ProductHuntButton() {
   return (
     <ProductHuntBtnWrapper>
-      <a
-        href="https://www.producthunt.com/posts/surf-6?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-surf-6"
-        target="_blank"
+      <ProductHuntBtn
+        onClick={() => {
+          router.push(
+            "https://www.producthunt.com/posts/grida-assistant-figma-2-flutter-react?utm_source=badge-featured&utm_medium=badge&utm_souce=badge-grida-assistant-figma-2-flutter-react",
+          );
+        }}
       >
         <img
-          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=284549&theme=light"
-          alt="Surf - Open repositories in a VSCode environment in your browser | Product Hunt"
+          src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=310028&theme=light"
+          alt="Grida Assistant - Figma 2 Flutter &React - Free & Opensource Design2Code Plugin with lot more features. | Product Hunt"
           style={{ width: "250px", height: "54px" }}
           width="250"
           height="54"
         />
-      </a>
+      </ProductHuntBtn>
     </ProductHuntBtnWrapper>
   );
 }
@@ -47,21 +51,29 @@ export default function LandingMainCtaButton() {
       mt={["24px", "24px", "40px", "40px"]}
       mb={["134px", "84px", "100px", "145px"]}
     >
-      <Motion whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+      <Row>
         <ProductHuntButton />
-        <MainButton onClick={handleCta}>Start now</MainButton>
-      </Motion>
+        <Motion whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <MainButton onClick={handleCta}>Start now</MainButton>
+        </Motion>
+      </Row>
     </Box>
   );
 }
 
-const Motion = styled(motion.div)`
+const Row = styled.div`
   display: flex;
   flex-direction: row;
-
   ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
     flex-direction: column-reverse;
   }
+`;
+
+const Motion = styled(motion.div)`
+  ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
+    margin: 0;
+  }
+  margin: auto;
 `;
 
 const ProductHuntBtnWrapper = styled.div`
@@ -77,4 +89,16 @@ const MainButton = styled(Button)`
   line-height: 22px;
   letter-spacing: 0.02em;
   margin: 0 -12px;
+
+  ${props => media(null, (props.theme as ThemeInterface).breakpoints[0])} {
+    width: 100%;
+    margin: 0;
+  }
+`;
+
+const ProductHuntBtn = styled.button`
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
 `;
