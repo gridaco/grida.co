@@ -1,6 +1,7 @@
 import { css } from "@emotion/core";
 import styled from "@emotion/styled";
-import renderToString from "next-mdx-remote/render-to-string";
+import { MDXRemote } from "next-mdx-remote";
+import { serialize } from "next-mdx-remote/serialize";
 import Link from "next/link";
 import React, { useState } from "react";
 import { Flex, Text } from "rebass";
@@ -18,21 +19,36 @@ const components = {
   code: CodeBlock,
 };
 
-export default function PostBody({ content }) {
+// ref: https://github.com/hashicorp/next-mdx-remote/issues/149
+export async function getStaticProps({ content }) {
+  // MDX text - can be from a local file, database, anywhere
+  const source = "Some **mdx** text, with a component <Test />";
+  const mdxSource = await serialize(source);
+  return { props: { source: mdxSource } };
+}
+
+export default function PostBody({}) {
   // const docs = hydrate(content, {})
   const [docs, setDocs] = useState(undefined);
+
   useAsyncEffect(async () => {
-    const mdxSource = await renderToString(content, { components });
-    setDocs(mdxSource.renderedOutput);
+    // setDocs(mdxSource);
   });
 
   return (
     <div className="max-w-2xl mx-auto">
-      <Documentation
+      {/* BEFORE UPDATE CODE  */}
+      {/* <Documentation
         dangerouslySetInnerHTML={{
           __html: docs,
         }}
-      />
+      /> */}
+
+      {/* AFTER UPDATE CODE */}
+      <Documentation>
+        {/* There is an issue in the process of converting content to A, so the code below is commented out. */}
+        {/* <MDXRemote {...content} components={components} />  */}
+      </Documentation>
       <Flex justifyContent="space-between" mt="90px">
         <Flex className="cursor" alignItems="center">
           <CustomIcon
