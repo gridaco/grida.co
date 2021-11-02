@@ -10,22 +10,13 @@ import { ThemeInterface } from "utils/styled/theme";
 
 import DesignPlatformsMobile from "./mobile";
 
-const renderPlatforms = ["figma", "sketch", "adobexd"];
+type RenderPlatform = "figma" | "sketch" | "adobexd";
+const renderPlatforms: RenderPlatform[] = ["figma", "sketch", "adobexd"];
 
 const DesignPlatforms = () => {
-  const [currentPlatform, setCurrentPlatform] = useState("figma");
-
-  // useEffect(() => {
-  //   window.addEventListener(
-  //     "resize",
-  //     () => (scrollRef.current.scrollLeft = 295),
-  //   );
-
-  //   return window.addEventListener(
-  //     "resize",
-  //     () => (scrollRef.current.scrollLeft = 295),
-  //   );
-  // }, []);
+  const [currentPlatform, setCurrentPlatform] = useState<RenderPlatform>(
+    "figma",
+  );
 
   return (
     <React.Fragment>
@@ -49,7 +40,7 @@ const DesignPlatforms = () => {
                   loading="eager"
                   alt="Grida supported design patforms"
                   src={`/assets/design-platforms/${currentPlatform}.png`}
-                  width={"auto"}
+                  width={904}
                   height={565}
                 />
               </div>
@@ -78,20 +69,6 @@ const DesignPlatforms = () => {
         </PlatformView>
       </Desktop>
     </React.Fragment>
-    // <AbosulteView width="50%">
-    //   <PlatformView>
-    //     <div className="platform-image">
-    //       <Image
-    //         alt="platform"
-    //         src={`/assets/design-platforms/${currentPlatform}.png`}
-    //         width="auto"
-    //         height="auto"
-    //       />
-    //     </div>
-
-    //  <LiveDesignDemoFrame />
-    //   </PlatformView>
-    // </AbosulteView>
   );
 };
 
@@ -106,9 +83,7 @@ const PlatformView = styled.div`
   margin-left: auto;
   height: 580px;
 
-  .platforms > div {
-    width: 24px;
-    height: 24px;
+  .platforms > span {
     margin-right: 28px !important;
   }
 
@@ -144,7 +119,7 @@ const Postioner = styled(Flex)`
     width: 100%;
     opacity: 0.6;
     box-shadow: 0px 4px 128px 32px rgba(0, 0, 0, 0.08);
-    div {
+    span {
       min-width: 818px;
       left: 20%;
       transform: translateX(-20%);

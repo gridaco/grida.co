@@ -1,7 +1,8 @@
+import styled from "@emotion/styled";
 import Image from "next/image";
 import React, { useState } from "react";
-import styled from "@emotion/styled";
 import { Flex } from "rebass";
+
 import LiveDesignDemoFrame from "components/landingpage/motion/live-design-demo";
 import { media } from "utils/styled/media";
 import { ThemeInterface } from "utils/styled/theme";
@@ -17,8 +18,8 @@ const DesignPlatformsMobile = () => {
           loading="eager"
           alt="Grida supported design platforms"
           src={`/assets/design-platforms/${currentPlatform}.png`}
-          width="auto"
-          height="565px"
+          width={904}
+          height={565}
         />
       </div>
       <PlatformView className="previews">
@@ -34,6 +35,7 @@ const DesignPlatformsMobile = () => {
               src={`/assets/platform-icons/${i}/${
                 currentPlatform === i ? "default" : "grey"
               }.png`}
+              layout="fixed"
               width="24"
               height="24"
             />
@@ -55,7 +57,7 @@ const Positoner = styled(Flex)`
     opacity: 0.6;
     box-shadow: 0px 4px 128px 32px rgba(0, 0, 0, 0.08);
 
-    div {
+    span {
       width: 507px !important;
       height: 317px !important;
     }
@@ -71,9 +73,7 @@ const PlatformView = styled.div`
   margin-left: auto;
   height: 580px;
 
-  .platforms > div {
-    width: 24px;
-    height: 24px;
+  .platforms > span {
     margin-right: 28px !important;
   }
 
