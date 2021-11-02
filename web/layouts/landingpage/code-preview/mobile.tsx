@@ -75,6 +75,7 @@ const CodePreviewMobile = () => {
             src={`/assets/platform-icons/${i.name}/${
               currentPlatform.name === i.name ? "default" : "grey"
             }.png`}
+            layout="fixed"
             width="24"
             height="24"
           />
@@ -127,9 +128,7 @@ const CodeView = styled(Box)`
 
 const Platforms = styled.div`
   margin-top: 20px;
-  div {
-    width: 24px;
-    height: 24px;
+  span {
     margin-right: 28px !important;
   }
 `;

@@ -101,6 +101,7 @@ const CodePreview = () => {
                     }.png`}
                     width="24"
                     height="24"
+                    layout="fixed"
                   />
                 ))}
               </Platforms>
@@ -131,9 +132,7 @@ const ViewWrapper = styled(Flex)`
 
 const Platforms = styled.div`
   margin-top: 20px;
-  div {
-    width: 24px;
-    height: 24px;
+  span {
     margin-right: 28px !important;
   }
 `;
