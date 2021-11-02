@@ -1,13 +1,14 @@
-import React from "react";
-import SectionLayout from "layout/section";
-import { Flex, Heading, Text } from "rebass";
 import styled from "@emotion/styled";
-import Icon from "components/icon";
-import { ThemeInterface } from "utils/styled/theme";
-import { media } from "utils/styled/media";
-import BlankArea from "components/blank-area";
+import SectionLayout from "layout/section";
 import Image from "next/image";
+import React from "react";
+import { Flex, Heading, Text } from "rebass";
+
+import BlankArea from "components/blank-area";
+import Icon from "components/icon";
 import LandingpageText from "components/landingpage/text";
+import { media } from "utils/styled/media";
+import { ThemeInterface } from "utils/styled/theme";
 
 const Collaborate = () => {
   return (
@@ -62,8 +63,9 @@ const Collaborate = () => {
                   loading="eager"
                   key="notification"
                   src="/assets/notification.png"
-                  width="auto"
-                  height="auto"
+                  width={690}
+                  height={225}
+                  layout="fixed"
                   alt="Grida collaboration slack notification"
                 />
               </div>
@@ -72,9 +74,10 @@ const Collaborate = () => {
           <div className="application-ui">
             <Image
               src="/assets/application-image-view.png"
+              width={515}
+              height={1042}
+              layout="fixed"
               loading="eager"
-              width="auto"
-              height="auto"
               alt="Grida collaboration for app developers"
             />
           </div>
@@ -141,7 +144,7 @@ const BackgroundImage = styled(Flex)`
   position: relative;
 
   .background-img {
-    div {
+    span {
       width: 100vw !important;
       height: 55vh !important;
       z-index: 1;
@@ -160,7 +163,7 @@ const BackgroundImage = styled(Flex)`
       height: 100%;
       position: absolute;
 
-      div {
+      span {
         max-width: 690px;
         max-height: 225px;
         width: 90% !important;
@@ -177,7 +180,7 @@ const BackgroundImage = styled(Flex)`
     left: 27%;
     z-index: 2;
 
-    div {
+    span {
       max-width: 515px !important;
       height: 1040px;
       width: 100% !important;
@@ -199,7 +202,7 @@ const BackgroundImage = styled(Flex)`
       bottom: -30%;
     }
 
-    .application-ui > div {
+    .application-ui > span {
       max-width: 280px !important;
       max-height: 600px;
     }
