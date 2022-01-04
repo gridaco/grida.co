@@ -9,7 +9,7 @@ export default function PricingPage() {
       <PageHead pageMeta={PAGES.pricing} />
       <Sections.Hero_TryFreePlan />
       <Sections.ComparePlans />
-      <Sections.FeaturesAndPricingTable />
+      {/* <Sections.FeaturesAndPricingTable /> */}
       <Sections.FAQs />
     </>
   );
