@@ -1,26 +1,27 @@
-import React from "react";
 import styled from "@emotion/styled";
+import React from "react";
 import { Flex, Text, Heading, Button } from "rebass";
+
 import Icon from "components/icon";
+import PricingCTAButton from "components/pricing-cta-button";
 import { media } from "utils/styled/media";
 import { ThemeInterface } from "utils/styled/theme";
-import PricingCTAButton from "components/pricing-cta-button";
 
 const descList = [
   {
-    title: "Code export including Flutter, React and more",
-  },
-  {
-    title: "Private git integration",
-  },
-  {
-    title: "Design linting",
+    title: "Unlimited feature access",
   },
   {
     title: "Unlimited public projects",
   },
   {
-    title: "Up to 5000 Objects",
+    title: "Up to 2 Figma files",
+  },
+  {
+    title: "Code export including Flutter, React and more",
+  },
+  {
+    title: "Design linting",
   },
 ];
 

@@ -6,12 +6,14 @@ import { LandingpageUrls } from "utils/landingpage/constants";
 function PricingCTAButton(props) {
   const { ...style } = props;
 
-  const handleSignupClick = () => {
-    window.location.href = LandingpageUrls.signup_with_return;
+  const movetoDocs = () => {
+    window.location.href = LandingpageUrls.signup_with_custom_return(
+      "https://grida.co/docs/getting-started/intro",
+    );
   };
 
   return (
-    <Button className="cursor" onClick={handleSignupClick} {...style}>
+    <Button className="cursor" onClick={movetoDocs} {...style}>
       Start now
     </Button>
   );
