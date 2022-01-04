@@ -26,6 +26,8 @@ export const LandingpageUrls = {
    * return to home after signup
    */
   signup_with_return: `https://accounts.grida.co/signup?redirect_uri=${signup_callback_redirect_uri()}`,
+  signup_with_custom_return: redirect =>
+    `https://accounts.grida.co/signup?redirect_uri=${redirect}`,
   signup: "https://accounts.grida.co/signup",
   // todo endregion swap sign up when ready
 

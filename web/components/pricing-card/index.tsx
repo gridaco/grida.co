@@ -1,19 +1,23 @@
 import styled from "@emotion/styled";
-import BlankArea from "components/blank-area";
-import Icon from "components/icon";
-import LandingpageText from "components/landingpage/text";
 import Link from "next/link";
 import React, { useCallback } from "react";
 import { Button, Flex, Text } from "rebass";
+
+import BlankArea from "components/blank-area";
+import Icon from "components/icon";
+import LandingpageText from "components/landingpage/text";
 import { usePopupContext } from "utils/context/PopupContext";
 import { LandingpageUrls } from "utils/landingpage/constants";
 import { media } from "utils/styled/media";
 import { ThemeInterface } from "utils/styled/theme";
-import PricingCTAButton from "components/pricing-cta-button";
 
 function PricingCard(props: {
   type: "paid" | "none-paid";
+  title: string;
+  price: string;
+  per?: string;
   planList: string[];
+  button: React.ReactChild;
 }) {
   const { addPopup, removePopup } = usePopupContext();
 
@@ -51,49 +55,10 @@ function PricingCard(props: {
     });
   }, []);
 
-  const handleClickPaidPlan = useCallback(() => {
-    addPopup({
-      title: "",
-      element: (
-        <Flex
-          width="calc(100vw - 40px)"
-          alignItems="center"
-          flexDirection="column"
-          p="48px"
-        >
-          <Icon
-            className="cursor"
-            name="headerClose"
-            ml="auto"
-            onClick={() => removePopup()}
-          />
-          <Flex width="80%" flexDirection="column" alignItems="center">
-            <LandingpageText variant="h4" textAlign="center">
-              Woopsy.
-            </LandingpageText>
-            <BlankArea height={[48, 48]} />
-            <LandingpageText variant="body1" textAlign="center">
-              Grida paid plans are disabled temporarily. Meanwhile, you can use
-              our free plan which basically does the same.
-              <Link href={LandingpageUrls.signup_with_return}>
-                <span style={{ margin: "0px 5px", color: "#172AD7" }}>
-                  Sign up
-                </span>
-              </Link>
-              here.
-            </LandingpageText>
-          </Flex>
-        </Flex>
-      ),
-    });
-  }, []);
-
   return (
     <Wrapper type={props.type}>
       <Heading>
-        <LandingpageText variant="h4">
-          {props.type != "none-paid" ? "For you team" : "For you"}
-        </LandingpageText>
+        <LandingpageText variant="h4">{props.title}</LandingpageText>
         {props.type === "none-paid" && (
           <Icon
             className="cursor"
@@ -103,10 +68,8 @@ function PricingCard(props: {
         )}
       </Heading>
       <PlanPricing>
-        <LandingpageText variant="h4">
-          {props.type != "none-paid" ? "$20" : "$0"}
-        </LandingpageText>
-        {props.type != "none-paid" && <Seat variant="body1">per seat/mo</Seat>}
+        <LandingpageText variant="h4">{props.price}</LandingpageText>
+        {props.per && <Seat variant="body1">{props.per}</Seat>}
       </PlanPricing>
       <Flex alignItems="center" height="100%" my="30px">
         <PlanDescription>
@@ -120,22 +83,7 @@ function PricingCard(props: {
           ))}
         </PlanDescription>
       </Flex>
-      {props.type === "none-paid" ? (
-        <PricingCTAButton
-          mt="auto"
-          style={{ borderRadius: 4, marginTop: "auto" }}
-        >
-          Start now
-        </PricingCTAButton>
-      ) : (
-        <CardCTAButton
-          className="cursor"
-          type={props.type}
-          onClick={() => props.type != "none-paid" && handleClickPaidPlan()}
-        >
-          Start 14 Day Trial
-        </CardCTAButton>
-      )}
+      {props.button}
     </Wrapper>
   );
 }
@@ -178,18 +126,6 @@ const PlanPricing = styled(Flex)`
 
 const Seat = styled(LandingpageText)`
   margin-left: 10px;
-`;
-
-const CardCTAButton = styled(Button)`
-  margin-top: auto;
-  border-radius: 4px;
-  ${p => {
-    if (p.type === "paid") {
-      return {
-        backgroundColor: "#D2D2D2",
-      };
-    }
-  }}
 `;
 
 const PlanDescription = styled(Flex)`
