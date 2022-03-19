@@ -1,11 +1,13 @@
+import styled from "@emotion/styled";
+import SectionLayout from "layout/section";
+import Image from "next/image";
 import React, { useState, useRef, useEffect } from "react";
 import { Box, Flex } from "rebass";
-import styled from "@emotion/styled";
-import Image from "next/image";
+
+import LiveDesignDemoFrame from "components/landingpage/motion/live-design-demo";
 import { media } from "utils/styled/media";
 import { ThemeInterface } from "utils/styled/theme";
-import LiveDesignDemoFrame from "components/landingpage/motion/live-design-demo";
-import SectionLayout from "layout/section";
+
 import DesignPlatformsMobile from "./mobile";
 
 const renderPlatforms = ["figma", "sketch", "adobexd"];
@@ -45,7 +47,7 @@ const DesignPlatforms = () => {
               <div className="platforms-preview">
                 <Image
                   loading="eager"
-                  alt="bridged supported design patforms"
+                  alt="Grida supported design patforms"
                   src={`/assets/design-platforms/${currentPlatform}.png`}
                   width="auto"
                   height="565px"
@@ -61,7 +63,7 @@ const DesignPlatforms = () => {
             {renderPlatforms.map(i => (
               <Image
                 loading="eager"
-                alt="bridged supported platform icons"
+                alt="Grida supported platform icons"
                 key={i}
                 className="cursor"
                 onClick={() => setCurrentPlatform(i)}
@@ -96,11 +98,10 @@ const DesignPlatforms = () => {
 export default DesignPlatforms;
 
 const PlatformView = styled.div`
-  position: absolute;
+  position: relative;
   z-index: 950;
-  border-radius: 12px;
-  top: 24%;
-  transform: translateY(-23.5%);
+  border-radius: 8px;
+  top: -500px;
   margin-left: auto;
   height: 580px;
 
@@ -112,22 +113,6 @@ const PlatformView = styled.div`
 
   .platforms {
     margin-top: 20px;
-  }
-
-  ${props =>
-    media(
-      (props.theme as ThemeInterface).breakpoints[0],
-      (props.theme as ThemeInterface).breakpoints[1],
-    )} {
-    transform: translateY(-27.5%);
-  }
-
-  ${props =>
-    media(
-      (props.theme as ThemeInterface).breakpoints[1],
-      (props.theme as ThemeInterface).breakpoints[2],
-    )} {
-    transform: translateY(-24%);
   }
 `;
 
@@ -186,6 +171,7 @@ const Mobile = styled.div`
 
 const Desktop = styled.div`
   display: block;
+  height: 700px;
   ${props => media("0px", (props.theme as ThemeInterface).breakpoints[0])} {
     display: none;
   }

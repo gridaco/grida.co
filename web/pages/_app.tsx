@@ -1,28 +1,33 @@
+/* eslint-disable import-helpers/order-imports */
 import { Global, css } from "@emotion/core";
 import { ThemeProvider } from "emotion-theming";
 import { AppProps } from "next/app";
 import Head from "next/head";
+import { useRouter } from "next/router";
 import React, { useEffect } from "react";
 import { CookiesProvider } from "react-cookie";
 
 import Footer from "components/footer";
 import Header from "components/header";
-import { defaultTheme } from "utils/styled";
-import { useRouter } from "next/router";
+import Popup from "components/popup";
 import {
   PopupConsumer,
   PopupInfo,
   PopupProvider,
 } from "utils/context/PopupContext";
-import Popup from "components/popup";
 import { analytics } from "utils/firebase";
+import { defaultTheme } from "utils/styled";
 import { BodyCustomStyleInAbosulteSectionLayout } from "utils/styled/styles";
+
 import "../utils/styled/fonts.css";
 import { MDXProvider } from "@mdx-js/react";
+
 import { _MDX_COMPONENTS } from "components/mdx";
 import { SEO_DEFAULTS } from "utils/seo";
 import makeKeywords from "utils/seo/make-keywords";
+
 import { Box } from "rebass";
+import { env } from "process";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const router = useRouter();
@@ -61,7 +66,6 @@ const App = ({ Component, pageProps }: AppProps) => {
             padding: 0;
             margin: 0;
             word-break: keep-all;
-            letter-spacing: -0.65px;
             min-height: 100vh;
             overflow-x: hidden;
             scroll-behavior: smooth;
@@ -121,6 +125,25 @@ const App = ({ Component, pageProps }: AppProps) => {
         <meta property="og:url" content={SEO_DEFAULTS.og.url} />
         <meta property="og:image" content={SEO_DEFAULTS.og.image} />
 
+        {/* pinterest domain verify */}
+        <meta
+          name="p:domain_verify"
+          content={env.NEXT_PUBLIC_P_DOMAIN_VERIFY}
+        />
+
+        {/* region Nanum Pen Script Font */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin=""
+        />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&display=swap"
+          rel="stylesheet"
+        ></link>
+        {/* endregion */}
+
         {/* region Google analytics */}
         {/* https://stackoverflow.com/a/62552263 */}
         <script
@@ -134,6 +157,26 @@ const App = ({ Component, pageProps }: AppProps) => {
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
             gtag('config', 'UA-196372205-1');
+        `,
+          }}
+        />
+        {/* end region */}
+
+        {/* region Global site tag (gtag.js) - Google Ads: 922132529 */}
+        <script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-922132529"
+        ></script>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('set', 'linker', {
+		            'domains': ['accounts.grida.co', 'app.grida.co', 'code.grida.co', 'console.grida.co']
+		        });
+            gtag('js', new Date());
+            gtag('config', 'AW-922132529');
         `,
           }}
         />

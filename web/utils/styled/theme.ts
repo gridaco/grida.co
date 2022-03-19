@@ -4,10 +4,20 @@ export interface ThemeInterface extends Theme {
   colors: {
     primary: string;
   };
-  breakpoints: string[];
+  breakpoints: [
+    // ~~ xs ~~
+    // sm
+    "768px",
+    // md
+    "1024px",
+    // lg
+    "1280px",
+    // xl
+    "1440px",
+  ];
   buttons: {
-    primary: object,
-    noShadow: object
+    primary: object;
+    noShadow: object;
   };
 }
 
@@ -19,13 +29,23 @@ const defaultButtonProps = {
   fontWeight: 500,
   cursor: "pointer",
   display: "flex",
-  alignItems: 'center',
+  alignItems: "center",
   justifyContent: "center",
-  boxShadow: '0px 4px 16px rgba(0, 0, 0, 0.12)'
+  boxShadow: "0px 4px 16px rgba(0, 0, 0, 0.12)",
 };
 
 const defaultTheme: ThemeInterface = {
-  breakpoints: ["768px", "1024px", "1280px", "1440px"],
+  breakpoints: [
+    // ~~ xs ~~
+    // sm
+    "768px",
+    // md
+    "1024px",
+    // lg
+    "1280px",
+    // xl
+    "1440px",
+  ],
   colors: {
     primary: "#2562FF",
   },
@@ -35,8 +55,8 @@ const defaultTheme: ThemeInterface = {
     },
     noShadow: {
       ...defaultButtonProps,
-      boxShadow: ""
-    }
+      boxShadow: "",
+    },
   },
 };
 

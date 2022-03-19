@@ -1,61 +1,34 @@
+import styled from "@emotion/styled";
 import Image from "next/image";
 import React, { useState } from "react";
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { a11yDark } from "react-syntax-highlighter/dist/cjs/styles/prism";
-import {
-  FLUTTER_COMPONENT_FULL_SOURCE,
-  REACT_JSCSS_COMPONENT_FULL_SOURCE,
-  HTML_COMPONENT_FULL_SOURCE,
-} from "./snippets";
-import styled from "@emotion/styled";
+import { vscDarkPlus as colorscheme } from "react-syntax-highlighter/dist/cjs/styles/prism";
 import { Box } from "rebass";
 
-interface DevFrameworkDemoConfig {
-  name: string;
-  lang: string;
-  source: string;
-}
-
-const DEFAULT_DEMO_ITEM_FLUTTER = {
-  name: "flutter",
-  lang: "dart",
-  source: FLUTTER_COMPONENT_FULL_SOURCE,
-};
-
-const DEV_FRAMEWORKS: DevFrameworkDemoConfig[] = [
-  DEFAULT_DEMO_ITEM_FLUTTER,
-  {
-    name: "html",
-    lang: "html",
-    source: HTML_COMPONENT_FULL_SOURCE,
-  },
-  {
-    name: "react",
-    lang: "tsx",
-    source: REACT_JSCSS_COMPONENT_FULL_SOURCE,
-  },
-  {
-    name: "svelte",
-    lang: "svelte",
-    source: REACT_JSCSS_COMPONENT_FULL_SOURCE,
-  },
-];
+import {
+  DevFrameworkDemoConfig,
+  DEFAULT_DEMO_ITEM,
+  DEV_FRAMEWORKS,
+} from "./data";
 
 const CodePreviewMobile = () => {
   const [currentPlatform, setCurrentPlatform] = useState<
     DevFrameworkDemoConfig
-  >(DEFAULT_DEMO_ITEM_FLUTTER);
+  >(DEFAULT_DEMO_ITEM);
 
   return (
     <div>
-      <CodeView height="420px" bg="#212121">
+      <CodeView height="420px" bg="rgb(30, 30, 30)">
         <header>
           <span />
           <span />
           <span />
         </header>
         <div className="body">
-          <SyntaxHighlighter language={currentPlatform.lang} style={a11yDark}>
+          <SyntaxHighlighter
+            language={currentPlatform.lang}
+            style={colorscheme}
+          >
             {currentPlatform.source}
           </SyntaxHighlighter>
         </div>
@@ -64,7 +37,7 @@ const CodePreviewMobile = () => {
         {DEV_FRAMEWORKS.map(i => (
           <Image
             loading="eager"
-            alt="bridged supported platforms icon"
+            alt="Grida supported platforms icon"
             key={i.name}
             className="cursor"
             onClick={() => setCurrentPlatform(i)}
@@ -88,15 +61,15 @@ const CodeView = styled(Box)`
   header {
     display: flex;
     align-items: center;
-    height: 50px;
+    height: 40px;
     padding: 0px 20px;
     border-top-left-radius: 12px;
     border-top-right-radius: 12px;
 
     span {
       background-color: #3d3d3d;
-      width: 16px;
-      height: 16px;
+      width: 12px;
+      height: 12px;
       margin-right: 10px;
       border-radius: 50%;
     }
@@ -104,7 +77,7 @@ const CodeView = styled(Box)`
 
   .body {
     width: 100%;
-    height: calc(100% - 50px);
+    height: calc(100% - 40px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -113,7 +86,7 @@ const CodeView = styled(Box)`
 
     pre {
       width: 95%;
-      height: 95%;
+      height: 100%;
       padding: 0px !important;
       border-bottom-left-radius: 12px;
       border-bottom-right-radius: 12px;

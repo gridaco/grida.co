@@ -1,7 +1,8 @@
-import React from "react";
-import { Box, Flex } from "rebass";
 import styled from "@emotion/styled";
 import Image from "next/image";
+import React from "react";
+import { Box, Flex } from "rebass";
+
 import { media } from "utils/styled/media";
 import { ThemeInterface } from "utils/styled/theme";
 
@@ -14,7 +15,7 @@ const ApplicationPreview = () => {
         src="/assets/sample-app-as-image.png"
         width="390px"
         height="788px"
-        alt="bridged demo app - design to code"
+        alt="Grida demo app - design to code"
       />
       {/* <Preview>
         <AppUI />
