@@ -42,7 +42,7 @@
     "@typeform/embed-react": "^1.20.0",
     "@types/three": "^0.149.0",
     "@zeit/next-css": "^1.0.1",
-    "axios": "^0.21.2",
+    "axios": "^1.6.0",
     "dayjs": "^1.11.7",
     "eslint-config-next": "^14.0.4",
     "firebase": "^8.2.10",
